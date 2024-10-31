@@ -56,6 +56,12 @@ public class PedidosActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        listarPedidos();
+    }
+
     private void listarPedidos(){
         redPedidos.addListenerForSingleValueEvent(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
