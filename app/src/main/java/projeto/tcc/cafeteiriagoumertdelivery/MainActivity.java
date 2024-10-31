@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
-
         Objects.requireNonNull(getSupportActionBar()).setTitle("Login");
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
@@ -42,16 +41,22 @@ public class MainActivity extends AppCompatActivity {
             login = mainBinding.login.getText().toString();
             senha = mainBinding.senha.getText().toString();
 
-            if (!login.isEmpty() && !senha.isEmpty()) {
-                auth.signInWithEmailAndPassword(login, senha).addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(this, "Bem-vindo de volta", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(this, VisualizarProdutosActivity.class));
-                    } else {
-                        Toast.makeText(this, "Informações incorretas.", Toast.LENGTH_SHORT).show();
-                    }
-                });
+            if ( login.equals("gerente") && senha.equals("adm")){
+               startActivity(new Intent(this, VisualizarProdutosActivity.class).putExtra("gerente", true));
+            }else{
+                if (!login.isEmpty() && !senha.isEmpty()) {
+                    auth.signInWithEmailAndPassword(login, senha).addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(this, "Bem-vindo de volta", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(this, VisualizarProdutosActivity.class));
+                        } else {
+                            Toast.makeText(this, "Informações incorretas.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
+
+
         });
 
         assert mainBinding.fazerRegistro != null;

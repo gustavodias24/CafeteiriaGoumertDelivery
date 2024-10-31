@@ -4,12 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -18,9 +14,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Objects;
 import java.util.UUID;
 
-import projeto.tcc.cafeteiriagoumertdelivery.databinding.ActivityMainBinding;
 import projeto.tcc.cafeteiriagoumertdelivery.databinding.ActivityRegistrarUsuarioBinding;
-import projeto.guilherme.cafeteiriagoumertdelivery.model.UsuarioModel;
+import projeto.tcc.cafeteiriagoumertdelivery.model.UsuarioModel;
 
 public class RegistrarUsuarioActivity extends AppCompatActivity {
 
@@ -54,7 +49,9 @@ public class RegistrarUsuarioActivity extends AppCompatActivity {
             senha = mainBinding.senha.getText().toString();
 
             if (!nome.isEmpty() && !email.isEmpty() && !senha.isEmpty()) {
+
                 usuarioModel.setEmail(email);
+                usuarioModel.setNome(nome);
                 usuarioModel.setSenha(senha);
 
                 usersRef.child(usuarioModel.getId()).setValue(usuarioModel).addOnCompleteListener(task -> {

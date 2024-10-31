@@ -17,14 +17,14 @@
     tools:context=".ConfigProdutoActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/produto_img"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/nome_produto_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -32,7 +32,7 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/descricao_produto_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -42,7 +42,7 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/editTextNumberSigned"
+        android:id="@+id/preco_produto_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -50,7 +50,7 @@
         android:inputType="numberSigned" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/salvar_produto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

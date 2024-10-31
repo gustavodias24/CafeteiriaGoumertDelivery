@@ -1,9 +1,19 @@
 package projeto.tcc.cafeteiriagoumertdelivery.model;
 
 public class ProdutoModel {
+    String id = "";
+
     String imagem, nome, descricao, preco;
 
     public ProdutoModel() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getImagem() {

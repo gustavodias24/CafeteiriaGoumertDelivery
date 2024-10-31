@@ -18,13 +18,14 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/produto_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
         </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -33,8 +34,37 @@
             android:text="Total: R$ 00.00"
             android:textSize="24sp" />
 
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Método de pagamento" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cartão" />
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pix" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dinheiro" />
+        </RadioGroup>
+
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/finalizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="finalizar compra" />
