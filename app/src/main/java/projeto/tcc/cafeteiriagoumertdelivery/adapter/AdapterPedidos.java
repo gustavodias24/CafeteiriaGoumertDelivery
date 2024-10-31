@@ -38,13 +38,13 @@ public class AdapterPedidos extends RecyclerView.Adapter<AdapterPedidos.MyViewHo
         PedidoModel p = lista.get(position);
 
         StringBuilder builder = new StringBuilder();
-        builder.append("<b>").append("Data: ").append("<b>").append(p.getData_hora()).append("<br>");
-        builder.append("<b>").append("Total: ").append("<b>").append(p.getTotal_compra()).append("<br>");
-        builder.append("<b>").append("Método: ").append("<b>").append(p.getMetodo_pagamento()).append("<br>");
-        builder.append("<b>").append("Produtos: ").append("<b>");
+        builder.append("<b>").append("Data: ").append("</b>").append(p.getData_hora()).append("<br>");
+        builder.append("<b>").append("Total: ").append("</b>").append(p.getTotal_compra()).append("<br>");
+        builder.append("<b>").append("Método: ").append("</b>").append(p.getMetodo_pagamento()).append("<br>");
+        builder.append("<b>").append("Produtos: ").append("</b>").append("<br>");
 
         for (ProdutoModel produto : p.getProdutos()) {
-            builder.append("<b>").append(produto.getNome()).append("<b>").append(" ").append(produto.getPreco()).append("<br>");
+            builder.append(produto.getNome()).append(" ").append(produto.getPreco()).append("<br>");
         }
 
         holder.textView_pedido.setText(
